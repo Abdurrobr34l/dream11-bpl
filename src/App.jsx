@@ -1,11 +1,13 @@
 import "./App.css";
+import Container from "./Components/Container/Container";
+import Header from "./Components/Header/Header";
 
 function App() {
-
   return (
     <>
-      <h1 className="text-5xl font-bold">Start Your Coding Here</h1>
-      <button className="btn btn-primary">Button</button>
+      <Container>
+        <Header></Header>
+      </Container>
     </>
   );
 }
