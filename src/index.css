@@ -11,5 +11,5 @@ body {
 }
 
 .commonHover {
-  @apply transition-colors duration-300 hover:bg-[#E7FE29] hover:text-[#13131370]
+  @apply transition-all duration-300 hover:bg-[#E7FE29] hover:text-[#ffffff] hover:outline-none
 }
