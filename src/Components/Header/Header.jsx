@@ -44,6 +44,7 @@ export default function Header() {
               <li>
                 <a className="flex justify-center px-5 py-3 font-bold outline-2 outline-[#13131320] rounded-[12px] max-w-[125px] commonHover">
                   0 Coin
+                  {/* 6  000 000 000 */}
                   <span>
                     <img src={coinImage} alt="coin" className="w-5 h-5" />
                   </span>
