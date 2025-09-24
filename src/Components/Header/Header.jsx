@@ -2,7 +2,7 @@ import React from "react";
 import coinImage from "../../assets/coin.png";
 import logoImage from "../../assets/logo.png";
 
-export default function Header() {
+export default function Header({availableBalance}) {
   return (
     <>
       <div className="navbar pt-8 pb-6 px-0">
@@ -43,7 +43,7 @@ export default function Header() {
               </li>
               <li>
                 <a className="flex justify-center px-5 py-3 font-bold outline-2 outline-[#13131320] rounded-[12px] max-w-[125px] commonHover">
-                  0 Coin
+                  {availableBalance} Coin
                   {/* 6  000 000 000 */}
                   <span>
                     <img src={coinImage} alt="coin" className="w-5 h-5" />
@@ -76,7 +76,7 @@ export default function Header() {
             </li>
             <li>
               <a className="px-5 py-3 font-bold outline-2 outline-[#13131320] rounded-[12px] commonHover flex items-center gap-2">
-                0 Coin
+                {availableBalance} Coin
                 <span>
                   <img src={coinImage} alt="coin" className="w-5 h-5" />
                 </span>

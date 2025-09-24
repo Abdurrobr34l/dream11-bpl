@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import userImage from "../../assets/user.png";
 import userFlag from "../../assets/flag.png";
 
-export default function Player({ playerDetails }) {
+export default function Player({ playerDetails, availableBalance, setAvailableBalance }) {
   const [isSelected, setIsSelected] = useState(false);
 
   return (
@@ -64,7 +64,12 @@ export default function Player({ playerDetails }) {
               {playerDetails.price}
 
               <button
-                onClick={() => setIsSelected(true)}
+                onClick={() => {
+                  setIsSelected(true)
+                  
+                  const numericPrice = parseInt(playerDetails.price.toString().replace(/\D/g, ""), 10)
+                  setAvailableBalance(availableBalance - numericPrice)
+                }}
                 disabled={isSelected}
                 className={`px-4 py-2 textarea-md font-medium max-w-[130px] border-2 rounded-[8px] text-center  ${isSelected ? "bg-gray-300 border-gray-300 cursor-not-allowed text-gray-600" : "border-[#1313131a] text-black cursor-pointer hover:bg-[#E7FE29] hover:text-[#131313]"}`}>
                 {isSelected === true ? "Selected" : "Choose Player"}
