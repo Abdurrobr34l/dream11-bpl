@@ -3,11 +3,11 @@
 @plugin "daisyui";
 
 body {
-  @apply bg-white text-black h-screen;
+  @apply bg-white text-[#131313];
 }
 
 .menuLink {
-  @apply font-semibold text-[#131313] opacity-100 transition-all duration-300 hover:bg-transparent hover:text-[#131313] hover:opacity-60;
+  @apply font-semibold opacity-100 transition-all duration-300 hover:bg-transparent hover:text-[#131313] hover:opacity-60;
 }
 
 .commonHover {
