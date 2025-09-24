@@ -4,7 +4,7 @@ import userFlag from "../../assets/flag.png";
 
 export default function AvailablePlayer({ playerPromise }) {
   const playersData = use(playerPromise);
-  console.log(playersData);
+  // console.log(playersData);
 
   return (
     <>
@@ -13,12 +13,14 @@ export default function AvailablePlayer({ playerPromise }) {
         })} */}
 
       <div className="mt-24 mb-48 grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
-        <div className="card p-4 border-2 border-[#1313131A] rounded-3xl">
+        {
+          playersData.map(playerDetails => 
+            <div className="card p-4 border-2 border-[#1313131A] rounded-3xl">
           <figure>
             <img
-              src="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp"
+              src={playerDetails.player_image}
               alt="Shoes"
-              className="rounded-2xl"
+              className="w-full h-[270px] rounded-2xl"
             />
           </figure>
           <div className="card-body p-0 pt-6">
@@ -33,7 +35,7 @@ export default function AvailablePlayer({ playerPromise }) {
                     className="size-5"
                   />
                 </span>
-                Viral Kohli
+                {playerDetails.player_name}
               </h2>
             </div>
 
@@ -47,68 +49,30 @@ export default function AvailablePlayer({ playerPromise }) {
                     className="size-4"
                   />
                 </span>
-                Bangladesh
+                {playerDetails.player_name}
               </h3>
               <p className="p-2 font-medium max-w-[120px] bg-[#1313131a] rounded-[8px] text-center">
-                All-Rounder
+                {playerDetails.playing_role}
               </p>
             </div>
 
             {/* Player Status */}
             <div>
-              <p className="font-bold text-[16px]">Rating</p>
+              <p className="font-bold text-[16px]">{playerDetails.rating}</p>
               <p className="flex items-center justify-between font-bold text-[16px] mt-4 mb-3">
-                Left-Hand-Bat
-                <span className="text-[#131313B3]">Left-Hand-Bat</span>
+                {playerDetails.bowling_style}
+                <span className="text-[#131313B3]">{playerDetails.bating_style}</span>
               </p>
               <p className="flex items-center justify-between font-bold text-[16px]">
-                Price: $1500000
-                <span className="p-2 font-medium max-w-[120px] bg-[#1313131a] rounded-[8px] text-center">Choose Player</span>
+                {playerDetails.price}
+                <button className="px-4 py-2 textarea-md font-medium max-w-[125px] border-2 border-[#1313131a] rounded-[8px] text-center cursor-pointer">Choose Player</button>
               </p>
             </div>
 
           </div>
         </div>
-
-        <div className="card p-4 border-2 border-[#1313131A] rounded-3xl">
-          <figure>
-            <img
-              src="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp"
-              alt="Shoes"
-              className="rounded-2xl"
-            />
-          </figure>
-          <div className="card-body">
-            <h2 className="card-title">Card Title</h2>
-            <p>
-              A card component has a figure, a body part, and inside body there
-              are title and actions parts
-            </p>
-            <div className="card-actions justify-end">
-              <button className="btn btn-primary">Buy Now</button>
-            </div>
-          </div>
-        </div>
-
-        <div className="card p-4 border-2 border-[#1313131A] rounded-3xl">
-          <figure>
-            <img
-              src="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp"
-              alt="Shoes"
-              className="rounded-2xl"
-            />
-          </figure>
-          <div className="card-body">
-            <h2 className="card-title">Card Title</h2>
-            <p>
-              A card component has a figure, a body part, and inside body there
-              are title and actions parts
-            </p>
-            <div className="card-actions justify-end">
-              <button className="btn btn-primary">Buy Now</button>
-            </div>
-          </div>
-        </div>
+          )
+        }
       </div>
     </>
   );
