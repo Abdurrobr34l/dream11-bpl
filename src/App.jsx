@@ -13,7 +13,7 @@ const playerPromise = playersJsonData();
 
 function App() {
   const [toggle, setToggle] = useState(true);
-  const [availableBalance, setAvailableBalance] = useState(6000000000);
+  const [availableBalance, setAvailableBalance] = useState(5000000); //5,365,000 is the total price
 
   return (
     <>
